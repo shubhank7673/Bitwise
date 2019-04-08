@@ -1,0 +1,158 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>particles.js</title>
+    <link rel="stylesheet" media="screen" href="{% static 'home2/css/style.css' %}" />
+    <link rel="stylesheet" href="{% static 'home2/home.css' %}" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+      integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Righteous"
+      rel="stylesheet"
+    />
+  </head>
+  <style>
+    .home-content h1 {
+      /* font-family: "Varela Round", sans-serif; */
+      margin-top: 8%;
+      /* text-shadow: 0px 2px 4px white; */
+      font-family: "Righteous", cursive;
+      font-size: 120px;
+    }
+    .sidebar a {
+      transition: letter-spacing 0.3s;
+    }
+    #sidebarId {
+      /* font-family: "Varela Round", sans-serif; */
+      font-family: "Righteous", cursive;
+      display: none;
+      background-color: rgba(0, 0, 0, 0.8);
+      color: white;
+      text-align: center;
+      width: 0%;
+      height: 100% !important;
+      overflow: auto;
+      position: fixed;
+      top: 0;
+      left: 0;
+      /* transition: 0.5s; */
+    }
+    .sidebar-content {
+      position: relative;
+      top: 20%;
+      width: 100%;
+      text-align: center;
+      margin-top: 0%;
+    }
+    .sidebar a {
+      color: lightgrey;
+      text-decoration: none;
+      display: block;
+      padding: 1.5%;
+      font-size: 40px;
+    }
+    .sidebar a:hover {
+      color: white;
+      letter-spacing: 2px;
+    }
+    .closebtn {
+      position: absolute;
+      top: 20px;
+      right: 45px;
+      font-size: 40px;
+      background: none;
+      color: white;
+      border: 0px;
+      transition: font-size 0.3s;
+    }
+  </style>
+  <body>
+    <div class="home-content" id="#homeContent">
+      <h1 class="title">Bitwise</h1>
+      <p class="subtitle">Juet's Programming hub</p>
+    </div>
+    <button onclick="open_sidebar()" class="openSidebar-btn">
+      <i class="fas fa-bars hamburger"></i>
+    </button>
+    <div class="sidebar" id="sidebarId">
+      <button onclick="close_sidebar()" class="closebtn">
+        <i class="fas fa-times"></i>
+      </button>
+      <div class="sidebar-content">
+        <a href="/">Home</a>
+        <a href="kodeathon">Kodeathon</a>
+        <a href="team">Team bitwise</a>
+        <a href="developers">Developers</a>
+        <a href="about">About</a>
+      </div>
+    </div>
+    <!-- particles.js container -->
+    <div id="particles-js"></div>
+    <!-- scripts -->
+    <script src="{% static 'home2/particle.js' %}"></script>
+    <script src="{% static 'home2/js/app.js' %}"></script>
+    <div id="homepage">
+      <button onclick="open_sidebar()" class="openSidebar-btn">
+        <i class="fas fa-bars hamburger"></i>
+      </button>
+      <button
+        onclick="changeToLight()"
+        class="chgv-btn chgv-btn2"
+        style="display:none;color:white;"
+      >
+        <i class="fas fa-cog"></i>
+      </button>
+      <div class="sidebar" id="sidebarId">
+        <button onclick="close_sidebar()" class="closebtn">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+    </div>
+    <!-- stats.js -->
+    <script>
+      var count_particles, stats, update;
+      stats = new Stats();
+      stats.setMode(0);
+      stats.domElement.style.position = "absolute";
+      stats.domElement.style.left = "0px";
+      stats.domElement.style.top = "0px";
+      document.body.appendChild(stats.domElement);
+      count_particles = document.querySelector(".js-count-particles");
+      update = function() {
+        stats.begin();
+        stats.end();
+        if (
+          window.pJSDom[0].pJS.particles &&
+          window.pJSDom[0].pJS.particles.array
+        ) {
+          count_particles.innerText =
+            window.pJSDom[0].pJS.particles.array.length;
+        }
+        requestAnimationFrame(update);
+      };
+      requestAnimationFrame(update);
+    </script>
+    <script>
+      function open_sidebar() {
+        document.getElementById("sidebarId").style.width = "100%";
+        document.getElementById("sidebarId").style.display = "block";
+        sidebar_trans();
+      }
+      function close_sidebar() {
+        sidebar_trans_back();
+      }
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/TweenMax.min.js"></script>
+    <script src="{% static 'home2/home.js' %}"></script>
+  </body>
+</html>

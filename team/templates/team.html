@@ -1,0 +1,419 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en" class="Teampage">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Teampage</title>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'css/normalize.css' %}"
+    />
+    <!--<link rel="stylesheet" type="text/css" href="css/demo.css" />-->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'css/component.css' %}"
+    />
+    <script src="{% static 'js/snap.svg-min.js' %}"></script>
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+      integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Righteous"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Arvo|Comfortaa"
+      rel="stylesheet"
+    />
+  </head>
+  <style>
+    .openSidebar-btn {
+      background: none;
+      border: 0px;
+      outline: none;
+      margin: 2%;
+      margin-bottom: 0%;
+      position: absolute;
+      color: black;
+      left: 0%;
+      top: 0%;
+      /* border: 2px solid black; */
+      font-size: 42px;
+      transition: font-size 0.3s;
+    }
+    .openSidebar-btn:hover {
+      cursor: pointer;
+      font-size: 45px;
+    }
+    #sidebarId {
+      /* font-family: "Varela Round", sans-serif; */
+      font-family: "Righteous", cursive;
+      display: none;
+      background-color: rgba(0, 0, 0, 0.8);
+      color: white;
+      text-align: center;
+      width: 0%;
+      height: 100% !important;
+      overflow: auto;
+      position: absolute;
+      top: 0;
+      left: 0;
+      /* transition: 0.5s; */
+    }
+    .sidebar-content {
+      position: relative;
+      top: 20%;
+      width: 100%;
+      text-align: center;
+      margin-top: 0%;
+    }
+    .sidebar a {
+      transition: letter-spacing 0.3s;
+    }
+    .sidebar a {
+      color: lightgrey;
+      text-decoration: none;
+      display: block;
+      padding: 1.5%;
+      font-size: 40px;
+    }
+    .sidebar a:hover {
+      color: white;
+      letter-spacing: 2px;
+    }
+    .closebtn {
+      position: absolute;
+      top: 20px;
+      right: 45px;
+      font-size: 40px;
+      background: none;
+      color: white;
+      border: 0px;
+      transition: font-size 0.3s;
+    }
+    .closebtn:hover {
+      cursor: pointer;
+      font-size: 45px;
+    }
+    .header {
+      /* border: 2px solid black; */
+      text-align: center;
+      font-family: "Righteous", cursive;
+    }
+    .header h1 {
+      font-size: 45px;
+    }
+    .grid {
+      /* font-family: "Arvo", serif; */
+      font-family: "Comfortaa", cursive;
+    }
+  </style>
+  <body>
+    <div class="container">
+      <div class="header">
+        <button onclick="open_sidebar()" class="openSidebar-btn">
+          <i class="fas fa-bars hamburger"></i>
+        </button>
+        <h1 style="color:black">Meet Our team</h1>
+      </div>
+      <section id="grid" class="grid clearfix">
+        <a
+          href="#"
+          data-path-hover="m 0,0 0,47.7775 c 24.580441,3.12569 55.897012,-8.199417 90,-8.199417 34.10299,0 65.41956,11.325107 90,8.199417 L 180,0 z"
+        >
+          <figure>
+            <img src="{% static 'img/2.png' %}" />
+            <svg viewBox="0 0 180 320" preserveAspectRatio="none">
+              <path
+                d="m 0,0 0,171.14385 c 24.580441,15.47138 55.897012,24.75772 90,24.75772 34.10299,0 65.41956,-9.28634 90,-24.75772 L 180,0 0,0 z"
+              />
+            </svg>
+            <figcaption>
+              <h2>Ritwik Shanker</h2>
+              <p>Secratary</p>
+              <button>About</button>
+            </figcaption>
+          </figure>
+        </a>
+        <a
+          href="#"
+          data-path-hover="m 0,0 0,47.7775 c 24.580441,3.12569 55.897012,-8.199417 90,-8.199417 34.10299,0 65.41956,11.325107 90,8.199417 L 180,0 z"
+        >
+          <figure>
+            <img src="{% static 'img/4.png' %}" />
+            <svg viewBox="0 0 180 320" preserveAspectRatio="none">
+              <path
+                d="m 0,0 0,171.14385 c 24.580441,15.47138 55.897012,24.75772 90,24.75772 34.10299,0 65.41956,-9.28634 90,-24.75772 L 180,0 0,0 z"
+              />
+            </svg>
+            <figcaption>
+              <h2>Sparsh Jaiswal</h2>
+              <p>Secratary</p>
+              <button>About</button>
+            </figcaption>
+          </figure>
+        </a>
+        <a
+          href="#"
+          data-path-hover="m 0,0 0,47.7775 c 24.580441,3.12569 55.897012,-8.199417 90,-8.199417 34.10299,0 65.41956,11.325107 90,8.199417 L 180,0 z"
+        >
+          <figure>
+            <img src="{% static 'img/6.png' %}" />
+            <svg viewBox="0 0 180 320" preserveAspectRatio="none">
+              <path
+                d="m 0,0 0,171.14385 c 24.580441,15.47138 55.897012,24.75772 90,24.75772 34.10299,0 65.41956,-9.28634 90,-24.75772 L 180,0 0,0 z"
+              />
+            </svg>
+            <figcaption>
+              <h2>Aditya Priyam</h2>
+              <p>Secratary</p>
+              <button>About</button>
+            </figcaption>
+          </figure>
+        </a>
+        <a
+          href="#"
+          data-path-hover="m 0,0 0,47.7775 c 24.580441,3.12569 55.897012,-8.199417 90,-8.199417 34.10299,0 65.41956,11.325107 90,8.199417 L 180,0 z"
+        >
+          <figure>
+            <img src="{% static 'img/8.png' %}" />
+            <svg viewBox="0 0 180 320" preserveAspectRatio="none">
+              <path
+                d="m 0,0 0,171.14385 c 24.580441,15.47138 55.897012,24.75772 90,24.75772 34.10299,0 65.41956,-9.28634 90,-24.75772 L 180,0 0,0 z"
+              />
+            </svg>
+            <figcaption>
+              <h2>Harsh Shrivastava</h2>
+              <p>Secratary</p>
+              <button>About</button>
+            </figcaption>
+          </figure>
+        </a>
+        <a
+          href="#"
+          data-path-hover="m 0,0 0,47.7775 c 24.580441,3.12569 55.897012,-8.199417 90,-8.199417 34.10299,0 65.41956,11.325107 90,8.199417 L 180,0 z"
+        >
+          <figure>
+            <img src="{% static 'img/2.png' %}" />
+            <svg viewBox="0 0 180 320" preserveAspectRatio="none">
+              <path
+                d="m 0,0 0,171.14385 c 24.580441,15.47138 55.897012,24.75772 90,24.75772 34.10299,0 65.41956,-9.28634 90,-24.75772 L 180,0 0,0 z"
+              />
+            </svg>
+            <figcaption>
+              <h2>Shubhank Khare</h2>
+              <p>Coordinator</p>
+              <button>About</button>
+            </figcaption>
+          </figure>
+        </a>
+        <a
+          href="#"
+          data-path-hover="m 0,0 0,47.7775 c 24.580441,3.12569 55.897012,-8.199417 90,-8.199417 34.10299,0 65.41956,11.325107 90,8.199417 L 180,0 z"
+        >
+          <figure>
+            <img src="{% static 'img/1.png' %}" />
+            <svg viewBox="0 0 180 320" preserveAspectRatio="none">
+              <path
+                d="m 0,0 0,171.14385 c 24.580441,15.47138 55.897012,24.75772 90,24.75772 34.10299,0 65.41956,-9.28634 90,-24.75772 L 180,0 0,0 z"
+              />
+            </svg>
+            <figcaption>
+              <h2>Piyush jain</h2>
+              <p>Coordinator</p>
+              <button>About</button>
+            </figcaption>
+          </figure>
+        </a>
+        <a
+          href="#"
+          data-path-hover="m 0,0 0,47.7775 c 24.580441,3.12569 55.897012,-8.199417 90,-8.199417 34.10299,0 65.41956,11.325107 90,8.199417 L 180,0 z"
+        >
+          <figure>
+            <img src="{% static 'img/3.png' %}" />
+            <svg viewBox="0 0 180 320" preserveAspectRatio="none">
+              <path
+                d="m 0,0 0,171.14385 c 24.580441,15.47138 55.897012,24.75772 90,24.75772 34.10299,0 65.41956,-9.28634 90,-24.75772 L 180,0 0,0 z"
+              />
+            </svg>
+            <figcaption>
+              <h2>Prakhar pandey</h2>
+              <p>Coordinator</p>
+              <button>About</button>
+            </figcaption>
+          </figure>
+        </a>
+        <a
+          href="#"
+          data-path-hover="m 0,0 0,47.7775 c 24.580441,3.12569 55.897012,-8.199417 90,-8.199417 34.10299,0 65.41956,11.325107 90,8.199417 L 180,0 z"
+        >
+          <figure>
+            <img src="{% static 'img/2.png' %}" />
+            <svg viewBox="0 0 180 320" preserveAspectRatio="none">
+              <path
+                d="m 0,0 0,171.14385 c 24.580441,15.47138 55.897012,24.75772 90,24.75772 34.10299,0 65.41956,-9.28634 90,-24.75772 L 180,0 0,0 z"
+              />
+            </svg>
+            <figcaption>
+              <h2>Sachinam Shrivastava</h2>
+              <p>Coordinator</p>
+              <button>About</button>
+            </figcaption>
+          </figure>
+        </a>
+        <a
+          href="#"
+          data-path-hover="m 0,0 0,47.7775 c 24.580441,3.12569 55.897012,-8.199417 90,-8.199417 34.10299,0 65.41956,11.325107 90,8.199417 L 180,0 z"
+        >
+          <figure>
+            <img src="{% static 'img/5.png' %}" />
+            <svg viewBox="0 0 180 320" preserveAspectRatio="none">
+              <path
+                d="m 0,0 0,171.14385 c 24.580441,15.47138 55.897012,24.75772 90,24.75772 34.10299,0 65.41956,-9.28634 90,-24.75772 L 180,0 0,0 z"
+              />
+            </svg>
+            <figcaption>
+              <h2>Abhinav sharma</h2>
+              <p>Coordinator</p>
+              <button>About</button>
+            </figcaption>
+          </figure>
+        </a>
+        <a
+          href="#"
+          data-path-hover="m 0,0 0,47.7775 c 24.580441,3.12569 55.897012,-8.199417 90,-8.199417 34.10299,0 65.41956,11.325107 90,8.199417 L 180,0 z"
+        >
+          <figure>
+            <img src="{% static 'img/2.png' %}" />
+            <svg viewBox="0 0 180 320" preserveAspectRatio="none">
+              <path
+                d="m 0,0 0,171.14385 c 24.580441,15.47138 55.897012,24.75772 90,24.75772 34.10299,0 65.41956,-9.28634 90,-24.75772 L 180,0 0,0 z"
+              />
+            </svg>
+            <figcaption>
+              <h2>manika sharma</h2>
+              <p>Coordinator</p>
+              <button>About</button>
+            </figcaption>
+          </figure>
+        </a>
+        <a
+          href="#"
+          data-path-hover="m 0,0 0,47.7775 c 24.580441,3.12569 55.897012,-8.199417 90,-8.199417 34.10299,0 65.41956,11.325107 90,8.199417 L 180,0 z"
+        >
+          <figure>
+            <img src="{% static 'img/2.png' %}" />
+            <svg viewBox="0 0 180 320" preserveAspectRatio="none">
+              <path
+                d="m 0,0 0,171.14385 c 24.580441,15.47138 55.897012,24.75772 90,24.75772 34.10299,0 65.41956,-9.28634 90,-24.75772 L 180,0 0,0 z"
+              />
+            </svg>
+            <figcaption>
+              <h2>aryan khare</h2>
+              <p>Coordinator</p>
+              <button>About</button>
+            </figcaption>
+          </figure>
+        </a>
+        <a
+          href="#"
+          data-path-hover="m 0,0 0,47.7775 c 24.580441,3.12569 55.897012,-8.199417 90,-8.199417 34.10299,0 65.41956,11.325107 90,8.199417 L 180,0 z"
+        >
+          <figure>
+            <img src="{% static 'img/7.png' %}" />
+            <svg viewBox="0 0 180 320" preserveAspectRatio="none">
+              <path
+                d="m 0,0 0,171.14385 c 24.580441,15.47138 55.897012,24.75772 90,24.75772 34.10299,0 65.41956,-9.28634 90,-24.75772 L 180,0 0,0 z"
+              />
+            </svg>
+            <figcaption>
+              <h2>soumya mukhija</h2>
+              <p>Coordinator</p>
+              <button>About</button>
+            </figcaption>
+          </figure>
+        </a>
+      </section>
+      <div class="sidebar" id="sidebarId">
+        <button onclick="close_sidebar()" class="closebtn">
+          <i class="fas fa-times"></i>
+        </button>
+        <div class="sidebar-content">
+          <a href="/">Home</a>
+          <a href="kodeathon">Kodeathon</a>
+          <a href="team">Team bitwise</a>
+          <a href="developers">Developers</a>
+          <a href="about">About</a>
+        </div>
+      </div>
+    </div>
+    <!-- /container -->
+    <!-- <script src="team.js"></script> -->
+    <script>
+      function open_sidebar() {
+        document.getElementById("sidebarId").style.width = "100%";
+        document.getElementById("sidebarId").style.display = "block";
+        document.getElementById("grid").style.position = "fixed";
+        TweenMax.from(".sidebar", 1, {
+          x: -1000,
+          ease: Back.easeOut.config(1.7)
+        });
+        TweenMax.staggerFrom(
+          ".sidebar a",
+          0.7,
+          { scale: 0, opacity: 0, x: 500 },
+          0.3
+        );
+      }
+      function close_sidebar() {
+        document.getElementById("grid").style.position = "absolute";
+        TweenMax.to(".sidebar", 1, {
+          x: -1000,
+          ease: Back.easeOut.config(1.7)
+        });
+        document.getElementById("sidebarId").style.display = "none";
+        TweenMax.to(".sidebar", 1, {
+          x: 0
+        });
+      }
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/TweenMax.min.js"></script>
+    <script>
+      (function() {
+        function init() {
+          var speed = 330,
+            easing = mina.backout;
+
+          [].slice
+            .call(document.querySelectorAll("#grid > a"))
+            .forEach(function(el) {
+              var s = Snap(el.querySelector("svg")),
+                path = s.select("path"),
+                pathConfig = {
+                  from: path.attr("d"),
+                  to: el.getAttribute("data-path-hover")
+                };
+
+              el.addEventListener("mouseenter", function() {
+                path.animate({ path: pathConfig.to }, speed, easing);
+              });
+
+              el.addEventListener("mouseleave", function() {
+                path.animate({ path: pathConfig.from }, speed, easing);
+              });
+            });
+        }
+
+        init();
+      })();
+    </script>
+  </body>
+</html>
