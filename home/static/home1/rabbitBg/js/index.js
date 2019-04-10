@@ -1,3 +1,5 @@
+/*javascript for game background */
+/*NOTE:This javascript file is not written by me*/
 //THREEJS RELATED VARIABLES
 
 var scene,

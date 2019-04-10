@@ -1,40 +1,110 @@
 {% load static %}
-
 <!DOCTYPE html>
-<html lang="en" class="Teampage">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Teampage</title>
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="{% static 'css/normalize.css' %}"
-    />
-    <!--<link rel="stylesheet" type="text/css" href="css/demo.css" />-->
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="{% static 'css/component.css' %}"
-    />
-    <script src="{% static 'js/snap.svg-min.js' %}"></script>
-    <link
-      rel="stylesheet"
-      href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
-      integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
-      crossorigin="anonymous"
-    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Team-bitwise</title>
     <link
       href="https://fonts.googleapis.com/css?family=Righteous"
       rel="stylesheet"
     />
     <link
-      href="https://fonts.googleapis.com/css?family=Arvo|Comfortaa"
       rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+      integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+      crossorigin="anonymous"
     />
   </head>
   <style>
+    /* body {
+      justify-content: center;
+    } */
+    .card {
+      /* margin: 10px; */
+      background: white;
+      padding: 10px;
+      border: 1px solid rgba(74, 74, 74, 0.075);
+      border-radius: 0px 20px 0px 0px;
+      width: 290px;
+      height: 290px;
+      text-align: center;
+      color: #7b7b7b;
+      font-family: "Righteous", cursive;
+      -webkit-filter: grayscale(50%);
+      filter: grayscale(50%);
+      -webkit-transition-delay: 0.1s;
+      transition-delay: 0.1s;
+      transition: 0.2s border, 0.2s padding;
+      margin: 3px;
+    }
+    .card .name {
+      font-size: 33px;
+      margin-top: 30px;
+    }
+    .line {
+      height: 1px;
+      width: 40%;
+      margin: 1em auto;
+      position: relative;
+      background: rgba(0, 0, 0, 0.1);
+    }
+    .dp {
+      display: block;
+      border-radius: 50%;
+      margin: 1em auto;
+      height: 110px;
+      width: 110px;
+    }
+    .card:hover {
+      padding: 8px;
+      -webkit-filter: none;
+      filter: none;
+      /* cursor: pointer; */
+      border: 3px solid rgba(0, 0, 0, 0.1);
+      color: black;
+    }
+    .position {
+      margin: 0;
+      position: relative;
+      font-size: 0.95em;
+      font-style: italic;
+      font-family: "Playfair Display", serif;
+      text-align: center;
+      display: block;
+    }
+    .linkedin,
+    .github {
+      display: block;
+      float: left;
+      color: #aaa;
+      font-size: 25px;
+    }
+    .github {
+      text-align: right;
+      float: right;
+      margin-right: 20px;
+    }
+    .linkedin {
+      margin-left: 20px;
+    }
+    .linkedin:hover {
+      color: black;
+    }
+    .github:hover {
+      color: black;
+    }
+    #grid > .card {
+      display: inline-block;
+    }
+    #grid {
+      position: relative;
+      text-align: center;
+      /* border: 2px solid black; */
+      width: 100%;
+    }
+    /*Team css*/
     .openSidebar-btn {
       background: none;
       border: 0px;
@@ -105,263 +175,214 @@
     }
     .header {
       /* border: 2px solid black; */
-      text-align: center;
+      /* text-align: center; */
       font-family: "Righteous", cursive;
+      position: relative;
+      text-align: center;
     }
     .header h1 {
       font-size: 45px;
     }
-    .grid {
-      /* font-family: "Arvo", serif; */
-      font-family: "Comfortaa", cursive;
+    @media only screen and (max-width: 800px) {
+      .header h1 {
+        font-size: 40px !important;
+      }
+    }
+    @media only screen and (max-width: 420px) {
+      .sidebar-content a {
+        padding: 20px !important;
+      }
+      .header h1,
+      .openSidebar-btn {
+        font-size: 40px !important;
+      }
+      .header h1 {
+        margin-top: 22px !important;
+        margin-left: 15%;
+      }
+      .openSidebar-btn {
+        top: 16px !important;
+      }
+    }
+    .header {
+      border: 2px solid white;
+      /*width: 80%;*/
     }
   </style>
   <body>
-    <div class="container">
-      <div class="header">
-        <button onclick="open_sidebar()" class="openSidebar-btn">
-          <i class="fas fa-bars hamburger"></i>
-        </button>
-        <h1 style="color:black">Meet Our team</h1>
+    <div class="header">
+      <button onclick="open_sidebar()" class="openSidebar-btn">
+        <i class="fas fa-bars hamburger"></i>
+      </button>
+      <h1 style="color:black">Meet Our team</h1>
+    </div>
+    <div id="grid">
+      <div class="card">
+        <div class="name">Ritwik Shanker</div>
+        <div class="line"></div>
+        <div class="position">Secretary</div>
+        <img src="{% static 'teamphotos/ritwik.jpg' %}" alt="" class="dp" />
+        <a href="#"
+          ><div class="linkedin"><i class="fab fa-linkedin-in"></i></div
+        ></a>
+        <a href="#"
+          ><div class="github"><i class="fab fa-github"></i></div
+        ></a>
       </div>
-      <section id="grid" class="grid clearfix">
-        <a
-          href="#"
-          data-path-hover="m 0,0 0,47.7775 c 24.580441,3.12569 55.897012,-8.199417 90,-8.199417 34.10299,0 65.41956,11.325107 90,8.199417 L 180,0 z"
-        >
-          <figure>
-            <img src="{% static 'img/2.png' %}" />
-            <svg viewBox="0 0 180 320" preserveAspectRatio="none">
-              <path
-                d="m 0,0 0,171.14385 c 24.580441,15.47138 55.897012,24.75772 90,24.75772 34.10299,0 65.41956,-9.28634 90,-24.75772 L 180,0 0,0 z"
-              />
-            </svg>
-            <figcaption>
-              <h2>Ritwik Shanker</h2>
-              <p>Secratary</p>
-              <button>About</button>
-            </figcaption>
-          </figure>
-        </a>
-        <a
-          href="#"
-          data-path-hover="m 0,0 0,47.7775 c 24.580441,3.12569 55.897012,-8.199417 90,-8.199417 34.10299,0 65.41956,11.325107 90,8.199417 L 180,0 z"
-        >
-          <figure>
-            <img src="{% static 'img/4.png' %}" />
-            <svg viewBox="0 0 180 320" preserveAspectRatio="none">
-              <path
-                d="m 0,0 0,171.14385 c 24.580441,15.47138 55.897012,24.75772 90,24.75772 34.10299,0 65.41956,-9.28634 90,-24.75772 L 180,0 0,0 z"
-              />
-            </svg>
-            <figcaption>
-              <h2>Sparsh Jaiswal</h2>
-              <p>Secratary</p>
-              <button>About</button>
-            </figcaption>
-          </figure>
-        </a>
-        <a
-          href="#"
-          data-path-hover="m 0,0 0,47.7775 c 24.580441,3.12569 55.897012,-8.199417 90,-8.199417 34.10299,0 65.41956,11.325107 90,8.199417 L 180,0 z"
-        >
-          <figure>
-            <img src="{% static 'img/6.png' %}" />
-            <svg viewBox="0 0 180 320" preserveAspectRatio="none">
-              <path
-                d="m 0,0 0,171.14385 c 24.580441,15.47138 55.897012,24.75772 90,24.75772 34.10299,0 65.41956,-9.28634 90,-24.75772 L 180,0 0,0 z"
-              />
-            </svg>
-            <figcaption>
-              <h2>Aditya Priyam</h2>
-              <p>Secratary</p>
-              <button>About</button>
-            </figcaption>
-          </figure>
-        </a>
-        <a
-          href="#"
-          data-path-hover="m 0,0 0,47.7775 c 24.580441,3.12569 55.897012,-8.199417 90,-8.199417 34.10299,0 65.41956,11.325107 90,8.199417 L 180,0 z"
-        >
-          <figure>
-            <img src="{% static 'img/8.png' %}" />
-            <svg viewBox="0 0 180 320" preserveAspectRatio="none">
-              <path
-                d="m 0,0 0,171.14385 c 24.580441,15.47138 55.897012,24.75772 90,24.75772 34.10299,0 65.41956,-9.28634 90,-24.75772 L 180,0 0,0 z"
-              />
-            </svg>
-            <figcaption>
-              <h2>Harsh Shrivastava</h2>
-              <p>Secratary</p>
-              <button>About</button>
-            </figcaption>
-          </figure>
-        </a>
-        <a
-          href="#"
-          data-path-hover="m 0,0 0,47.7775 c 24.580441,3.12569 55.897012,-8.199417 90,-8.199417 34.10299,0 65.41956,11.325107 90,8.199417 L 180,0 z"
-        >
-          <figure>
-            <img src="{% static 'img/2.png' %}" />
-            <svg viewBox="0 0 180 320" preserveAspectRatio="none">
-              <path
-                d="m 0,0 0,171.14385 c 24.580441,15.47138 55.897012,24.75772 90,24.75772 34.10299,0 65.41956,-9.28634 90,-24.75772 L 180,0 0,0 z"
-              />
-            </svg>
-            <figcaption>
-              <h2>Shubhank Khare</h2>
-              <p>Coordinator</p>
-              <button>About</button>
-            </figcaption>
-          </figure>
-        </a>
-        <a
-          href="#"
-          data-path-hover="m 0,0 0,47.7775 c 24.580441,3.12569 55.897012,-8.199417 90,-8.199417 34.10299,0 65.41956,11.325107 90,8.199417 L 180,0 z"
-        >
-          <figure>
-            <img src="{% static 'img/1.png' %}" />
-            <svg viewBox="0 0 180 320" preserveAspectRatio="none">
-              <path
-                d="m 0,0 0,171.14385 c 24.580441,15.47138 55.897012,24.75772 90,24.75772 34.10299,0 65.41956,-9.28634 90,-24.75772 L 180,0 0,0 z"
-              />
-            </svg>
-            <figcaption>
-              <h2>Piyush jain</h2>
-              <p>Coordinator</p>
-              <button>About</button>
-            </figcaption>
-          </figure>
-        </a>
-        <a
-          href="#"
-          data-path-hover="m 0,0 0,47.7775 c 24.580441,3.12569 55.897012,-8.199417 90,-8.199417 34.10299,0 65.41956,11.325107 90,8.199417 L 180,0 z"
-        >
-          <figure>
-            <img src="{% static 'img/3.png' %}" />
-            <svg viewBox="0 0 180 320" preserveAspectRatio="none">
-              <path
-                d="m 0,0 0,171.14385 c 24.580441,15.47138 55.897012,24.75772 90,24.75772 34.10299,0 65.41956,-9.28634 90,-24.75772 L 180,0 0,0 z"
-              />
-            </svg>
-            <figcaption>
-              <h2>Prakhar pandey</h2>
-              <p>Coordinator</p>
-              <button>About</button>
-            </figcaption>
-          </figure>
-        </a>
-        <a
-          href="#"
-          data-path-hover="m 0,0 0,47.7775 c 24.580441,3.12569 55.897012,-8.199417 90,-8.199417 34.10299,0 65.41956,11.325107 90,8.199417 L 180,0 z"
-        >
-          <figure>
-            <img src="{% static 'img/2.png' %}" />
-            <svg viewBox="0 0 180 320" preserveAspectRatio="none">
-              <path
-                d="m 0,0 0,171.14385 c 24.580441,15.47138 55.897012,24.75772 90,24.75772 34.10299,0 65.41956,-9.28634 90,-24.75772 L 180,0 0,0 z"
-              />
-            </svg>
-            <figcaption>
-              <h2>Sachinam Shrivastava</h2>
-              <p>Coordinator</p>
-              <button>About</button>
-            </figcaption>
-          </figure>
-        </a>
-        <a
-          href="#"
-          data-path-hover="m 0,0 0,47.7775 c 24.580441,3.12569 55.897012,-8.199417 90,-8.199417 34.10299,0 65.41956,11.325107 90,8.199417 L 180,0 z"
-        >
-          <figure>
-            <img src="{% static 'img/5.png' %}" />
-            <svg viewBox="0 0 180 320" preserveAspectRatio="none">
-              <path
-                d="m 0,0 0,171.14385 c 24.580441,15.47138 55.897012,24.75772 90,24.75772 34.10299,0 65.41956,-9.28634 90,-24.75772 L 180,0 0,0 z"
-              />
-            </svg>
-            <figcaption>
-              <h2>Abhinav sharma</h2>
-              <p>Coordinator</p>
-              <button>About</button>
-            </figcaption>
-          </figure>
-        </a>
-        <a
-          href="#"
-          data-path-hover="m 0,0 0,47.7775 c 24.580441,3.12569 55.897012,-8.199417 90,-8.199417 34.10299,0 65.41956,11.325107 90,8.199417 L 180,0 z"
-        >
-          <figure>
-            <img src="{% static 'img/2.png' %}" />
-            <svg viewBox="0 0 180 320" preserveAspectRatio="none">
-              <path
-                d="m 0,0 0,171.14385 c 24.580441,15.47138 55.897012,24.75772 90,24.75772 34.10299,0 65.41956,-9.28634 90,-24.75772 L 180,0 0,0 z"
-              />
-            </svg>
-            <figcaption>
-              <h2>manika sharma</h2>
-              <p>Coordinator</p>
-              <button>About</button>
-            </figcaption>
-          </figure>
-        </a>
-        <a
-          href="#"
-          data-path-hover="m 0,0 0,47.7775 c 24.580441,3.12569 55.897012,-8.199417 90,-8.199417 34.10299,0 65.41956,11.325107 90,8.199417 L 180,0 z"
-        >
-          <figure>
-            <img src="{% static 'img/2.png' %}" />
-            <svg viewBox="0 0 180 320" preserveAspectRatio="none">
-              <path
-                d="m 0,0 0,171.14385 c 24.580441,15.47138 55.897012,24.75772 90,24.75772 34.10299,0 65.41956,-9.28634 90,-24.75772 L 180,0 0,0 z"
-              />
-            </svg>
-            <figcaption>
-              <h2>aryan khare</h2>
-              <p>Coordinator</p>
-              <button>About</button>
-            </figcaption>
-          </figure>
-        </a>
-        <a
-          href="#"
-          data-path-hover="m 0,0 0,47.7775 c 24.580441,3.12569 55.897012,-8.199417 90,-8.199417 34.10299,0 65.41956,11.325107 90,8.199417 L 180,0 z"
-        >
-          <figure>
-            <img src="{% static 'img/7.png' %}" />
-            <svg viewBox="0 0 180 320" preserveAspectRatio="none">
-              <path
-                d="m 0,0 0,171.14385 c 24.580441,15.47138 55.897012,24.75772 90,24.75772 34.10299,0 65.41956,-9.28634 90,-24.75772 L 180,0 0,0 z"
-              />
-            </svg>
-            <figcaption>
-              <h2>soumya mukhija</h2>
-              <p>Coordinator</p>
-              <button>About</button>
-            </figcaption>
-          </figure>
-        </a>
-      </section>
-      <div class="sidebar" id="sidebarId">
-        <button onclick="close_sidebar()" class="closebtn">
-          <i class="fas fa-times"></i>
-        </button>
-        <div class="sidebar-content">
-          <a href="/">Home</a>
-          <a href="kodeathon">Kodeathon</a>
-          <a href="team">Team bitwise</a>
-          <a href="developers">Developers</a>
-          <a href="about">About</a>
-        </div>
+      <div class="card">
+        <div class="name">Sparsh Jaiswal</div>
+        <div class="line"></div>
+        <div class="position">Secretary</div>
+        <img src="{% static 'teamphotos/sparshsir.jpg' %}" alt="" class="dp" />
+        <a href="#"
+          ><div class="linkedin"><i class="fab fa-linkedin-in"></i></div
+        ></a>
+        <a href="#"
+          ><div class="github"><i class="fab fa-github"></i></div
+        ></a>
+      </div>
+      <div class="card">
+        <div class="name">Aditya Priyam</div>
+        <div class="line"></div>
+        <div class="position">Secretary</div>
+        <img
+          src="{% static 'teamphotos/adityapriyam.jpg' %}"
+          alt=""
+          class="dp"
+        />
+        <a href="#"
+          ><div class="linkedin"><i class="fab fa-linkedin-in"></i></div
+        ></a>
+        <a href="#"
+          ><div class="github"><i class="fab fa-github"></i></div
+        ></a>
+      </div>
+      <div class="card">
+        <div class="name">Harsh Shrivastava</div>
+        <div class="line"></div>
+        <div class="position">Secretary</div>
+        <img src="{% static 'teamphotos/harsh.jpg' %}" alt="" class="dp" />
+        <a href="#"
+          ><div class="linkedin"><i class="fab fa-linkedin-in"></i></div
+        ></a>
+        <a href="#"
+          ><div class="github"><i class="fab fa-github"></i></div
+        ></a>
+      </div>
+      <!-- <div class="grid"> -->
+      <div class="card">
+        <div class="name">Shubhank</div>
+        <div class="line"></div>
+        <div class="position">Coordinator</div>
+        <img src="{% static 'teamphotos/my.jpg' %}" alt="" class="dp" />
+        <a href="#"
+          ><div class="linkedin"><i class="fab fa-linkedin-in"></i></div
+        ></a>
+        <a href="#"
+          ><div class="github"><i class="fab fa-github"></i></div
+        ></a>
+      </div>
+      <div class="card">
+        <div class="name">Piyush</div>
+        <div class="line"></div>
+        <div class="position">Coordinator</div>
+        <img src="{% static 'teamphotos/' %}" alt="" class="dp" />
+        <a href="#"
+          ><div class="linkedin"><i class="fab fa-linkedin-in"></i></div
+        ></a>
+        <a href="#"
+          ><div class="github"><i class="fab fa-github"></i></div
+        ></a>
+      </div>
+      <div class="card">
+        <div class="name">Prakhar</div>
+        <div class="line"></div>
+        <div class="position">Coordinator</div>
+        <img src="{% static 'teamphotos/prakhar.jpg' %}" alt="" class="dp" />
+        <a href="#"
+          ><div class="linkedin"><i class="fab fa-linkedin-in"></i></div
+        ></a>
+        <a href="#"
+          ><div class="github"><i class="fab fa-github"></i></div
+        ></a>
+      </div>
+      <div class="card">
+        <div class="name">Sachinam</div>
+        <div class="line"></div>
+        <div class="position">Coordinator</div>
+        <img src="{% static 'teamphotos/sachinam.jpg' %}" alt="" class="dp" />
+        <a href="#"
+          ><div class="linkedin"><i class="fab fa-linkedin-in"></i></div
+        ></a>
+        <a href="#"
+          ><div class="github"><i class="fab fa-github"></i></div
+        ></a>
+      </div>
+      <div class="card">
+        <div class="name">Abhinav</div>
+        <div class="line"></div>
+        <div class="position">Coordinator</div>
+        <img src="{% static 'teamphotos/abhinav.jpg' %}" alt="" class="dp" />
+        <a href="#"
+          ><div class="linkedin"><i class="fab fa-linkedin-in"></i></div
+        ></a>
+        <a href="#"
+          ><div class="github"><i class="fab fa-github"></i></div
+        ></a>
+      </div>
+      <div class="card">
+        <div class="name">Manika</div>
+        <div class="line"></div>
+        <div class="position">Coordinator</div>
+        <img src="{% static 'teamphotos/manika.jpg' %}" alt="" class="dp" />
+        <a href="#"
+          ><div class="linkedin"><i class="fab fa-linkedin-in"></i></div
+        ></a>
+        <a href="#"
+          ><div class="github"><i class="fab fa-github"></i></div
+        ></a>
+      </div>
+      <div class="card">
+        <div class="name">Aryan</div>
+        <div class="line"></div>
+        <div class="position">Coordinator</div>
+        <img src="{% static 'teamphotos/aryan.jpg' %}" alt="" class="dp" />
+        <a href="#"
+          ><div class="linkedin"><i class="fab fa-linkedin-in"></i></div
+        ></a>
+        <a href="#"
+          ><div class="github"><i class="fab fa-github"></i></div
+        ></a>
+      </div>
+      <div class="card">
+        <div class="name">Soumya</div>
+        <div class="line"></div>
+        <div class="position">Coordinator</div>
+        <img src="{% static 'teamphotos/soumya.jpg' %}" alt="" class="dp" />
+        <a href="#"
+          ><div class="linkedin"><i class="fab fa-linkedin-in"></i></div
+        ></a>
+        <a href="#"
+          ><div class="github"><i class="fab fa-github"></i></div
+        ></a>
       </div>
     </div>
-    <!-- /container -->
-    <!-- <script src="team.js"></script> -->
+    <div class="sidebar" id="sidebarId">
+      <button onclick="cc()" class="closebtn">
+        <i class="fas fa-times"></i>
+      </button>
+      <div class="sidebar-content">
+        <a href="{% url 'home' %}">Home</a>
+        <a href="{% url 'kodeathon' %}">Kodeathon</a>
+        <a href="{% url 'team' %}">Team bitwise</a>
+        <a href="{% url 'developers' %}">Developers</a>
+        <a href="{% url 'about' %}">About</a>
+      </div>
+    </div>
     <script>
       function open_sidebar() {
         document.getElementById("sidebarId").style.width = "100%";
         document.getElementById("sidebarId").style.display = "block";
-        document.getElementById("grid").style.position = "fixed";
         TweenMax.from(".sidebar", 1, {
           x: -1000,
           ease: Back.easeOut.config(1.7)
@@ -372,48 +393,15 @@
           { scale: 0, opacity: 0, x: 500 },
           0.3
         );
+        document.getElementById("grid").style.position = "fixed";
+        // document.body.style.position="fixed";
       }
-      function close_sidebar() {
-        document.getElementById("grid").style.position = "absolute";
-        TweenMax.to(".sidebar", 1, {
-          x: -1000,
-          ease: Back.easeOut.config(1.7)
-        });
+      function cc() {
         document.getElementById("sidebarId").style.display = "none";
-        TweenMax.to(".sidebar", 1, {
-          x: 0
-        });
+        document.getElementById("grid").style.position = "relative";
       }
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/TweenMax.min.js"></script>
-    <script>
-      (function() {
-        function init() {
-          var speed = 330,
-            easing = mina.backout;
-
-          [].slice
-            .call(document.querySelectorAll("#grid > a"))
-            .forEach(function(el) {
-              var s = Snap(el.querySelector("svg")),
-                path = s.select("path"),
-                pathConfig = {
-                  from: path.attr("d"),
-                  to: el.getAttribute("data-path-hover")
-                };
-
-              el.addEventListener("mouseenter", function() {
-                path.animate({ path: pathConfig.to }, speed, easing);
-              });
-
-              el.addEventListener("mouseleave", function() {
-                path.animate({ path: pathConfig.from }, speed, easing);
-              });
-            });
-        }
-
-        init();
-      })();
-    </script>
+    <!-- </div> -->
   </body>
 </html>

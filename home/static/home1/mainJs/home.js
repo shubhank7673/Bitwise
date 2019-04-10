@@ -1,9 +1,4 @@
 var timelineNew = new TimelineMax();
-// TweenMax.from(".welcome", 0.7, { x: 1000 });
-// TweenMax.to(".welcome", 0.5, { x: -1000, delay: 1.2 });
-// setTimeout(function() {
-//   document.querySelector(".welcome").style.display = "none";
-// }, 1500);
 TweenMax.from(".title", 1, { x: 1000, delay: 1.0 });
 TweenMax.from(".subtitle", 1, { x: -1000, delay: 1.5 });
 

@@ -1,50 +1,5 @@
-.typed-cursor {
-  opacity: 1;
-  animation: blink 0.7s infinite;
-}
-
-@keyframes blink {
-  0% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
 body {
   background-color: white;
-}
-.circle {
-  border-radius: 50px;
-  background-color: lime;
-}
-.terminal-container {
-  margin-top: 3%;
-  display: none;
-}
-.upper-terminal {
-  text-align: center;
-  padding-left: 10px;
-  width: 40%;
-  margin-left: 30%;
-  background-color: rgb(224, 224, 224);
-  border-radius: 15px 15px 0 0;
-}
-.terminal {
-  display: inline-block;
-  font-family: "Courier New", Courier, monospace;
-  box-shadow: 8px 8px 18px rgba(0, 0, 0, 0.7);
-  font-size: 18px !important;
-  background-color: rgba(0, 0, 0, 0.9);
-  width: 40%;
-  height: 50vh !important;
-  margin-left: 30%;
-  color: white;
-  padding-left: 10px;
-  border-radius: 0px 0 15px 15px;
 }
 @media only screen and (max-width: 800px) {
   .home-content h1 {
@@ -71,10 +26,6 @@ body {
   .welcome {
     display: none;
   }
-}
-.path1 {
-  stroke-width: 10px;
-  stroke: red;
 }
 #sidebarId {
   /* font-family: "Varela Round", sans-serif; */

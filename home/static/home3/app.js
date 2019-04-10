@@ -29,7 +29,7 @@ particlesJS(
         }
       },
       opacity: {
-        value: 0.6392095897221408,
+        value: 0.5,
         random: false,
         anim: {
           enable: false,
@@ -112,3 +112,17 @@ particlesJS(
     retina_detect: true
   }
 );
+// particlesJS("particles-js", {
+//   particles: {
+//     nb: 80
+//   },
+//   interactivity: {
+//     events: {
+//       onresize: {
+//         enable: true,
+//         density_auto: true,
+//         density_area: 400 // nb_particles = particles.nb * (canvas width *  canvas height / 1000) / density_area
+//       }
+//     }
+//   }
+// });

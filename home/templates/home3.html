@@ -1,0 +1,89 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Bitwise</title>
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+      integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
+      crossorigin="anonymous"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Righteous"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="{% static 'home3/main-css/home.css' %}" />
+  </head>
+  <style>
+    #particles-js {
+      width: 100%;
+      height: 100%;
+      position: fixed;
+      background-color: #ffffff;
+      background-image: url("");
+      background-size: cover;
+      background-position: 50% 50%;
+      background-repeat: no-repeat;
+    }
+    .body-particles {
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 100;
+    }
+  </style>
+  <body>
+      <div class="body-particles">
+            <div id="wrapper">
+                <div class="home-content" id="#homeContent">
+      <!-- <h1 class="welcome">Welcome To</h1> -->
+      <h1 class="title">Bitwise</h1>
+      <p class="subtitle">Juet's Programming hub</p>
+    </div>
+    <div class="buttons">
+      <button onclick="open_sidebar()" class="openSidebar-btn">
+        <i class="fas fa-bars hamburger"></i>
+      </button>
+    </div>
+    <div class="sidebar" id="sidebarId">
+      <button onclick="close_sidebar()" class="closebtn">
+        <i class="fas fa-times"></i>
+      </button>
+      <div class="sidebar-content">
+        <a href="">Home</a>
+        <a href="kodeathon">Kodeathon</a>
+        <a href="team">Team bitwise</a>
+        <a href="developers">Developers</a>
+        <a href="about">About</a>
+      </div>
+    </div>
+            </div>
+        </div>
+
+    <div id="particles-js"></div>
+    <!-- scripts -->
+    <script src="{% static 'home3/particles.js' %}"></script>
+    <script src="{% static  'home3/app.js' %}"></script>
+    <script>
+      function open_sidebar() {
+        document.getElementById("sidebarId").style.width = "100%";
+        document.getElementById("sidebarId").style.display = "block";
+        sidebar_trans();
+      }
+      function close_sidebar() {
+        sidebar_trans_back();
+      }
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/TweenMax.min.js"></script>
+    <script src="{% static 'home3/main-js/home.js' %}"></script>
+  </body>
+</html>
