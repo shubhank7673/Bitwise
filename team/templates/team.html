@@ -26,7 +26,7 @@
       background: white;
       padding: 10px;
       border: 1px solid rgba(74, 74, 74, 0.075);
-      border-radius: 0px 20px 0px 0px;
+      border-radius:0px 20px 0px 0px;
       width: 290px;
       height: 290px;
       text-align: center;
@@ -119,6 +119,18 @@
       font-size: 42px;
       transition: font-size 0.3s;
     }
+    .logob{
+        height:100px;
+        width:100px;
+        position:absolute;
+        right:0%;
+        top:0%;
+        /*margin:2%;*/
+
+    }
+    .meetTeam{
+        display:none;
+    }
     .openSidebar-btn:hover {
       cursor: pointer;
       font-size: 45px;
@@ -196,12 +208,32 @@
       .openSidebar-btn {
         font-size: 40px !important;
       }
-      .header h1 {
-        margin-top: 22px !important;
-        margin-left: 15%;
+    .header h1{
+         display:none !important;
+          margin-top:22px !important;
+          margin-left:15% ;
       }
       .openSidebar-btn {
         top: 16px !important;
+      }
+      .meetTeam{
+          display:block;
+          position:relative;
+          margin-top:100px;
+          font-family: "Righteous", cursive;
+          font-size:40px;
+          /*border:2px solid black;*/
+      }
+      body{
+          text-align:center;
+      }
+      .logob{
+          position:absolute;
+          height:60px;
+          width:60px;
+          top: 18px !important;
+          right:10px;
+          /*border:2px solid black;*/
       }
     }
     .header {
@@ -214,8 +246,10 @@
       <button onclick="open_sidebar()" class="openSidebar-btn">
         <i class="fas fa-bars hamburger"></i>
       </button>
+      <img src="{% static 'teamphotos/logo.png' %}" alt="" class="logob" />
       <h1 style="color:black">Meet Our team</h1>
     </div>
+    <h1 class="meetTeam" style="color:black">Meet Our team</h1>
     <div id="grid">
       <div class="card">
         <div class="name">Ritwik Shanker</div>
@@ -234,10 +268,10 @@
         <div class="line"></div>
         <div class="position">Secretary</div>
         <img src="{% static 'teamphotos/sparshsir.jpg' %}" alt="" class="dp" />
-        <a href="#"
+        <a href="https://www.linkedin.com/in/sparshjaiswal/"
           ><div class="linkedin"><i class="fab fa-linkedin-in"></i></div
         ></a>
-        <a href="#"
+        <a href="https://github.com/Sparsh-Jaiswal"
           ><div class="github"><i class="fab fa-github"></i></div
         ></a>
       </div>
@@ -245,11 +279,7 @@
         <div class="name">Aditya Priyam</div>
         <div class="line"></div>
         <div class="position">Secretary</div>
-        <img
-          src="{% static 'teamphotos/adityapriyam.jpg' %}"
-          alt=""
-          class="dp"
-        />
+        <img src="{% static 'teamphotos/adityapriyam.jpg' %}" alt="" class="dp" />
         <a href="#"
           ><div class="linkedin"><i class="fab fa-linkedin-in"></i></div
         ></a>
@@ -274,11 +304,11 @@
         <div class="name">Shubhank</div>
         <div class="line"></div>
         <div class="position">Coordinator</div>
-        <img src="{% static 'teamphotos/my.jpg' %}" alt="" class="dp" />
-        <a href="#"
+        <img src="{% static 'teamphotos/Shubhank.jpg' %}" alt="" class="dp" />
+        <a href="https://angel.co/shubhank-khare-1"
           ><div class="linkedin"><i class="fab fa-angellist"></i></div
         ></a>
-        <a href="#"
+        <a href="https://github.com/shubhank7673"
           ><div class="github"><i class="fab fa-github"></i></div
         ></a>
       </div>
@@ -359,10 +389,10 @@
         <div class="line"></div>
         <div class="position">Coordinator</div>
         <img src="{% static 'teamphotos/soumya.jpg' %}" alt="" class="dp" />
-        <a href="#"
+        <a href="https://linkedin.com/in/soumyamukhija"
           ><div class="linkedin"><i class="fab fa-linkedin-in"></i></div
         ></a>
-        <a href="#"
+        <a href="https://github.com/soumyamukhija"
           ><div class="github"><i class="fab fa-github"></i></div
         ></a>
       </div>
