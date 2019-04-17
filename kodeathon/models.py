@@ -1,3 +1,8 @@
 from django.db import models
 
-# Create your models here.
+class kodeathon(models.Model):
+    isActive = models.BooleanField()
+    contestName = models.CharField(max_length=20)
+    sheetName = models.CharField(max_length=60)
+    def __str__(self):
+        return self.contestName
