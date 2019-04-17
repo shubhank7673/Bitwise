@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Kodeathon</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Righteous"
+      rel="stylesheet"
+    />
+  </head>
+  <style>
+    body {
+      /* background-color: rgb(250, 240, 209); */
+      background: #fffed8;
+      /*background:white;*/
+      width: 99.5%;
+      height: 100%;
+      justify-content: center;
+      text-align: center;
+    }
+    form {
+      left: 0;
+      top: 0;
+      font-family: "Righteous", cursive;
+      /* border: 2px solid black; */
+      display: inline-block;
+      text-align: left;
+      color: #3b3f45;
+    }
+    form input {
+      outline: none;
+      display: block;
+      /* margin-left: auto; */
+      margin-right: auto;
+      width: 100%;
+      margin-top: 0px;
+      margin-bottom: 45px;
+      padding-top: 15px;
+      padding-bottom: 10px;
+      border: none;
+      background: #fffed8;
+      border-bottom: 2px solid rgba(0, 0, 0, 0.2);
+      font-size: 20px;
+      font-family: "Righteous", cursive;
+      color: rgba(0, 0, 0, 0.6);
+    }
+    form label {
+      margin-right: auto;
+      font-size: 25px;
+    }
+    form > h1 {
+      font-size: 40px;
+    }
+    .btn-4:active:before {
+      color: #17954c;
+    }
+    .btn {
+      background: none;
+      font-size: 18px;
+      font-family: "Righteous", cursive;
+      border: 3px solid #3b3f45;
+      color: #3b3f45;
+      border-radius: 25px;
+      padding: 10px;
+      padding-right: 25px;
+      padding-left: 25px;
+      float: right;
+    }
+    .btn:hover {
+      background: #3b3f45;
+      border-color: #3b3f45;
+      color: white;
+      cursor: pointer;
+    }
+    .title {
+      margin-bottom: 70px;
+    }
+    @media only screen and (max-width: 800px) {
+    .btn{
+        margin-right:15px;
+    }
+    }
+  </style>
+  <body>
+    <form action="" method="POST">
+    {% csrf_token %}
+      <h1 class="title">Registration for {{name}}</h1>
+      <label for="teamname">Name of your team</label>
+      <input name="teamname" type="text" required />
+      <label for="email">Your email address</label>
+      <input name="email" type="email" required />
+      <label for="member1">Team member1</label>
+      <input name="member1" type="text" required />
+      <label for="member2">Team member2</label>
+      <input name="member2" type="text" />
+      <label for="member3">Team member3</label>
+      <input name="member3" type="text" />
+      <button class="btn ">Submit</button>
+    </form>
+  </body>
+</html>
