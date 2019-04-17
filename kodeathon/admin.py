@@ -1,3 +1,7 @@
 from django.contrib import admin
+from .models import kodeathon
 
-# Register your models here.
+@admin.register(kodeathon)
+class kodeathonA(admin.ModelAdmin):
+    pass
+
