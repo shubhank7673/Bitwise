@@ -5,7 +5,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Bitwise</title>
+    <link rel="shortcut icon" href="{% static 'teamphotos/bitwise_logo.ico' %}">
+    <title>Bitwise-Registered</title>
     <link
       rel="stylesheet"
       href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
@@ -56,14 +57,19 @@
       color: white;
       background: rgba(0, 0, 0, 0.9);
     }
+    @media only screen and (max-width: 420px) {
+      .title{
+          font-size:10px !important;
+      }
+    }
   </style>
   <body>
     <div class="body-particles">
       <div id="wrapper">
         <div class="home-content" id="#homeContent">
           <!-- <h1 class="welcome">Welcome To</h1> -->
-          <h1 class="title">Registered</h1>
-          <p class="subtitle">Please check your email for more information</p>
+          <h1 class="title">Done!</h1>
+          <p class="subtitle">check your email for more information</p>
           <a href="{% url 'home' %}"
             ><button class="gohome">Go to home</button></a
           >
