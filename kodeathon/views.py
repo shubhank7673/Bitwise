@@ -8,8 +8,6 @@ from .models import kodeathon
 
 def kodeathonf(request):
     kd = kodeathon.objects.all()
-    print (kd)
-    print (len(kd))
     if len(kd)==0:
         return HttpResponse('No upcoming kodeathons')
     kd = kd[len(kd)-1]
@@ -24,7 +22,7 @@ def kodeathonf(request):
             scope = ['https://spreadsheets.google.com/feeds','https://www.googleapis.com/auth/drive']
             credentials = ServiceAccountCredentials.from_json_keyfile_name('flowing-sign-237313-08e73b362c9a.json',scope)
             at = gspread.authorize(credentials)
-            worksheet = at.open(kd.sheetName).sheet1
+            worksheet = at.open('teamregistration').sheet1
             worksheet.append_row([team,mobile,member1,member2,member3,passwd])
         else:
             name = request.POST['name']
@@ -35,9 +33,9 @@ def kodeathonf(request):
             scope = ['https://spreadsheets.google.com/feeds','https://www.googleapis.com/auth/drive']
             credentials = ServiceAccountCredentials.from_json_keyfile_name('flowing-sign-237313-08e73b362c9a.json',scope)
             at = gspread.authorize(credentials)
-            worksheet = at.open(kd.sheetName).sheet1
+            worksheet = at.open('individualregistration').sheet1
             worksheet.append_row([name,Er,mobile,passwd])
-        return HttpResponse('registration successfull<br><a href="http://bitwisejuet.pythonanywhere.com">Click here</a> to return to main site')
+        return render(request,'success.html')
     if kd.isActive:
         return render(request,'kodeathon.html',{'name':kd.contestName,'TeamEvent':kd.TeamEvent})
     else:
