@@ -1,0 +1,78 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Bitwise</title>
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+      integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
+      crossorigin="anonymous"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Righteous"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="{% static 'home3/main-css/home.css' %}" />
+  </head>
+  <style>
+    #particles-js {
+      width: 100%;
+      height: 100%;
+      position: fixed;
+      background-color: #ffffff;
+      background-image: url("");
+      background-size: cover;
+      background-position: 50% 50%;
+      background-repeat: no-repeat;
+    }
+    .body-particles {
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 100;
+    }
+    .gohome {
+      background: 0;
+      color: rgba(0, 0, 0, 0.7);
+      border: 2px solid rgba(0, 0, 0, 0.7);
+      padding: 10px;
+      border-radius: 17px;
+      font-family: "Righteous", cursive;
+      font-size: 20px;
+      margin-top: 15px;
+      outline: none;
+    }
+    .gohome:hover {
+      cursor: pointer;
+      color: white;
+      background: rgba(0, 0, 0, 0.9);
+    }
+  </style>
+  <body>
+    <div class="body-particles">
+      <div id="wrapper">
+        <div class="home-content" id="#homeContent">
+          <!-- <h1 class="welcome">Welcome To</h1> -->
+          <h1 class="title">OOPs!</h1>
+          <p class="subtitle">The page you are looking for doesn't exist</p>
+          <a href="{% url 'home' %}"
+            ><button class="gohome">Go to home</button></a
+          >
+        </div>
+      </div>
+    </div>
+
+    <div id="particles-js"></div>
+    <script src="{% static 'home3/particles.js' %}"></script>
+    <script src="{% static  'home3/app.js' %}"></script>
+  </body>
+</html>
