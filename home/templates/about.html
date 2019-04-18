@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -19,6 +20,7 @@
       href="https://fonts.googleapis.com/css?family=Montserrat"
       rel="stylesheet"
     />
+    <link rel="shortcut icon" href="{% static 'teamphotos/bitwise_logo.ico' %}">
   </head>
   <style>
     .openSidebar-btn {
@@ -171,7 +173,7 @@
       /* border: 2px solid black; */
       text-align: center;
       font-family: "Montserrat", sans-serif;
-      position: relative;
+      /*position: relative;*/
       color: rgba(0, 0, 0, 0.65);
       /* color: gray; */
       font-size: 20px;
@@ -189,7 +191,7 @@
       padding-left: 10%;
       padding-right: 10%;
       letter-spacing: 1px;
-      font-size: 17px;
+      font-size: 18px;
       text-align: left;
     }
     @media only screen and (max-width: 800px) {
@@ -197,7 +199,8 @@
         padding: 0;
         letter-spacing: 2px !important;
         /* padding-left: 3px; */
-        text-align: left !important;
+        text-align: center !important;
+        /*font-size:15px !important;*/
       }
       .our-mission {
         font-size: 40px !important;
@@ -212,14 +215,21 @@
       <button onclick="open_sidebar()" class="openSidebar-btn">
         <i class="fas fa-bars hamburger"></i>
       </button>
-      <a href="{% url 'home' %}"><img src="logo.png" alt="" class="logob"/></a>
+      <a href="https://www.facebook.com/JUETprogrammingHub/"><img src="{% static 'teamphotos/logo.png' %}" alt="" class="logob"/></a>
       <!-- <h1 style="color:black">About Us</h1> -->
     </div>
     <!-- <h1 class="meetTeam" style="color:black">About Us</h1> -->
-    <div class="content">
+    <div class="content" id="content">
       <p class="our-mission">- Our Mission -</p>
       <p>To inculcate the programming culture in University</p>
       <p class="about-us">About</p>
+      <!--<p class="normal">-->
+      <!--  Bitwise is JUET's Programming Hub which focuses on improving the-->
+      <!--  Programming culture at the institute. Throughout the year we organize-->
+      <!--  various events such as Kodeathons and workshops on various Proramming-->
+      <!--  languages.We also conduct a weekly code-class which covers the area of-->
+      <!--  competitive programming and data-structures.-->
+      <!--</p>-->
       <p class="normal">
         Bitwise is JUET's Programming Hub which focuses on improving the
         Programming culture at the institute. In its initial stages, BITWISE was
@@ -264,12 +274,14 @@
           { scale: 0, opacity: 0, x: 500 },
           0.3
         );
-        document.getElementById("grid").style.position = "fixed";
+        document.getElementById("content").style.position = "fixed";
         // document.body.style.position="fixed";
+        // document.body.style.position = "fixed";
       }
       function cc() {
         document.getElementById("sidebarId").style.display = "none";
-        document.getElementById("grid").style.position = "relative";
+        document.getElementById("content").style.position = "relative";
+        // document.body.style.position = "relative";
       }
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/TweenMax.min.js"></script>
