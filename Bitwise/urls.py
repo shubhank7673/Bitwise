@@ -8,3 +8,5 @@ urlpatterns = [
     path('',include('events.urls'),name="Events"),
     path('',include('team.urls'),name="Team"),
 ]
+
+handler404 = 'home.views.error_404_view'
