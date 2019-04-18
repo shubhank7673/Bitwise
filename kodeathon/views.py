@@ -8,24 +8,37 @@ from .models import kodeathon
 
 def kodeathonf(request):
     kd = kodeathon.objects.all()
-#     print (kd)
-#     print (len(kd))
+    print (kd)
+    print (len(kd))
     if len(kd)==0:
         return HttpResponse('No upcoming kodeathons')
     kd = kd[len(kd)-1]
     if request.method == 'POST':
-        team = request.POST['teamname']
-        member1 = request.POST['member1']
-        member2 = request.POST['member2']
-        member3 = request.POST['member3']
-        passwd = ''.join([random.choice(string.ascii_letters + string.digits) for n in range(6)])
-        scope = ['https://spreadsheets.google.com/feeds','https://www.googleapis.com/auth/drive']
-        credentials = ServiceAccountCredentials.from_json_keyfile_name('flowing-sign-237313-08e73b362c9a.json',scope)
-        at = gspread.authorize(credentials)
-        worksheet = at.open(kd.sheetName).sheet1
-        worksheet.append_row([team,member1,member2,member3,passwd])
+        if kd.TeamEvent==True:
+            team = request.POST['teamname']
+            member1 = request.POST['member1']
+            member2 = request.POST['member2']
+            member3 = request.POST['member3']
+            mobile = request.POST['mobile']
+            passwd = ''.join([random.choice(string.ascii_letters + string.digits) for n in range(6)])
+            scope = ['https://spreadsheets.google.com/feeds','https://www.googleapis.com/auth/drive']
+            credentials = ServiceAccountCredentials.from_json_keyfile_name('flowing-sign-237313-08e73b362c9a.json',scope)
+            at = gspread.authorize(credentials)
+            worksheet = at.open(kd.sheetName).sheet1
+            worksheet.append_row([team,mobile,member1,member2,member3,passwd])
+        else:
+            name = request.POST['name']
+            Er = request.POST['Er']
+            email = request.POST['email']
+            mobile = request.POST['mobile']
+            passwd = ''.join([random.choice(string.ascii_letters + string.digits) for n in range(6)])
+            scope = ['https://spreadsheets.google.com/feeds','https://www.googleapis.com/auth/drive']
+            credentials = ServiceAccountCredentials.from_json_keyfile_name('flowing-sign-237313-08e73b362c9a.json',scope)
+            at = gspread.authorize(credentials)
+            worksheet = at.open(kd.sheetName).sheet1
+            worksheet.append_row([name,Er,mobile,passwd])
         return HttpResponse('registration successfull<br><a href="http://bitwisejuet.pythonanywhere.com">Click here</a> to return to main site')
     if kd.isActive:
-        return render(request,'kodeathon.html',{'name':kd.contestName})
+        return render(request,'kodeathon.html',{'name':kd.contestName,'TeamEvent':kd.TeamEvent})
     else:
         return HttpResponse('No upcoming kodeathons')
