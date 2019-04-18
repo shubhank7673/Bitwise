@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>About</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Righteous"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+      integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Montserrat"
+      rel="stylesheet"
+    />
+  </head>
+  <style>
+    .openSidebar-btn {
+      background: none;
+      border: 0px;
+      outline: none;
+      margin: 1%;
+      margin-bottom: 0%;
+      position: absolute;
+      color: black;
+      left: 0%;
+      top: 0%;
+      /* border: 2px solid black; */
+      font-size: 42px;
+      transition: font-size 0.3s;
+    }
+    .logob {
+      height: 80px;
+      width: 80px;
+      position: absolute;
+      right: 1%;
+      top: 4%;
+      /*margin:2%;*/
+      transition: 0.5s;
+    }
+    .logob:hover {
+      height: 90px;
+      width: 90px;
+    }
+    .meetTeam {
+      display: none;
+    }
+    .openSidebar-btn:hover {
+      cursor: pointer;
+      font-size: 45px;
+    }
+    #sidebarId {
+      /* font-family: "Varela Round", sans-serif; */
+      font-family: "Righteous", cursive;
+      display: none;
+      background-color: rgba(0, 0, 0, 0.8);
+      color: white;
+      text-align: center;
+      width: 0%;
+      height: 100% !important;
+      overflow: auto;
+      position: absolute;
+      top: 0;
+      left: 0;
+      /* transition: 0.5s; */
+    }
+    .sidebar-content {
+      position: relative;
+      top: 20%;
+      width: 100%;
+      text-align: center;
+      margin-top: 0%;
+    }
+    .sidebar a {
+      transition: letter-spacing 0.3s;
+    }
+    .sidebar a {
+      color: lightgrey;
+      text-decoration: none;
+      display: block;
+      padding: 1.5%;
+      font-size: 40px;
+    }
+    .sidebar a:hover {
+      color: white;
+      letter-spacing: 2px;
+    }
+    .closebtn {
+      position: absolute;
+      top: 20px;
+      right: 45px;
+      font-size: 40px;
+      background: none;
+      color: white;
+      border: 0px;
+      transition: font-size 0.3s;
+    }
+    .closebtn:hover {
+      cursor: pointer;
+      font-size: 45px;
+    }
+    .header {
+      /* border: 2px solid black; */
+      /* text-align: center; */
+      font-family: "Righteous", cursive;
+      position: relative;
+      text-align: center;
+    }
+    .header h1 {
+      font-size: 45px;
+    }
+    @media only screen and (max-width: 800px) {
+      .header h1 {
+        font-size: 40px !important;
+      }
+    }
+    @media only screen and (max-width: 420px) {
+      .sidebar-content a {
+        padding: 20px !important;
+      }
+      .header h1,
+      .openSidebar-btn {
+        font-size: 40px !important;
+      }
+      .header h1 {
+        display: none !important;
+        margin-top: 22px !important;
+        margin-left: 15%;
+      }
+      .openSidebar-btn {
+        top: 0px !important;
+      }
+      .meetTeam {
+        display: block;
+        position: relative;
+        margin-top: 90px;
+        font-family: "Righteous", cursive;
+        font-size: 40px;
+        /*border:2px solid black;*/
+      }
+      body {
+        text-align: center;
+      }
+      .logob {
+        position: absolute;
+        height: 60px;
+        width: 60px;
+        top: 1px !important;
+        right: 10px;
+        /*border:2px solid black;*/
+        transition: 0.2s;
+      }
+      .logob:hover {
+        height: 70px !important;
+        width: 70px !important;
+        top: -1px !important;
+      }
+    }
+    .header {
+      border: 1px solid white;
+      /*width: 80%;*/
+    }
+    .content {
+      margin-top: 70px;
+      /* border: 2px solid black; */
+      text-align: center;
+      font-family: "Montserrat", sans-serif;
+      position: relative;
+      color: rgba(0, 0, 0, 0.65);
+      /* color: gray; */
+      font-size: 20px;
+    }
+    .our-mission {
+      font-size: 50px;
+      /* border: 2px solid black; */
+      margin-bottom: 0;
+    }
+    .about-us {
+      font-size: 40px;
+      margin-bottom: 0;
+    }
+    .normal {
+      padding-left: 10%;
+      padding-right: 10%;
+      letter-spacing: 1px;
+      font-size: 17px;
+      text-align: left;
+    }
+    @media only screen and (max-width: 800px) {
+      .normal {
+        padding: 0;
+        letter-spacing: 2px !important;
+        /* padding-left: 3px; */
+        text-align: left !important;
+      }
+      .our-mission {
+        font-size: 40px !important;
+      }
+      .about-us {
+        margin-top: 0;
+      }
+    }
+  </style>
+  <body>
+    <div class="header">
+      <button onclick="open_sidebar()" class="openSidebar-btn">
+        <i class="fas fa-bars hamburger"></i>
+      </button>
+      <a href="{% url 'home' %}"><img src="logo.png" alt="" class="logob"/></a>
+      <!-- <h1 style="color:black">About Us</h1> -->
+    </div>
+    <!-- <h1 class="meetTeam" style="color:black">About Us</h1> -->
+    <div class="content">
+      <p class="our-mission">- Our Mission -</p>
+      <p>To inculcate the programming culture in University</p>
+      <p class="about-us">About</p>
+      <p class="normal">
+        Bitwise is JUET's Programming Hub which focuses on improving the
+        Programming culture at the institute. In its initial stages, BITWISE was
+        a team of people with code at their fingertips, who were ready to share
+        their knowledge and grow both individually and along with the troupe.
+        Now, the scenario is different.BITWISE is more than just a team. It has
+        grown into a full-fledged programming and development community
+        strengthened by students from every nook and corner of the University,
+        who share the craze and harbour the singular mindset of growth. At
+        BITWISE, JUET we aim to make learning fun and raise the spark of
+        competition among the students through our events and competitions.
+        Here, no one grows alone. Students from all years learn equally in our
+        Code Classes and compete on the same ground in our Kodeathons. Apart
+        from these, our events at the annual tech-fest are equally interactive
+        and challenging.In a nutshell, BITWISE is a community of students who
+        are willing to learn. We hope you will be one of them.
+      </p>
+    </div>
+    <div class="sidebar" id="sidebarId">
+      <button onclick="cc()" class="closebtn">
+        <i class="fas fa-times"></i>
+      </button>
+      <div class="sidebar-content">
+        <a href="{% url 'home' %}">Home</a>
+        <a href="{% url 'kodeathon' %}">Kodeathon</a>
+        <a href="{% url 'team' %}">Team bitwise</a>
+        <a href="{% url 'developers' %}">Developers</a>
+        <a href="{% url 'about' %}">About</a>
+      </div>
+    </div>
+    <script>
+      function open_sidebar() {
+        document.getElementById("sidebarId").style.width = "100%";
+        document.getElementById("sidebarId").style.display = "block";
+        TweenMax.from(".sidebar", 1, {
+          x: -1000,
+          ease: Back.easeOut.config(1.7)
+        });
+        TweenMax.staggerFrom(
+          ".sidebar a",
+          0.7,
+          { scale: 0, opacity: 0, x: 500 },
+          0.3
+        );
+        document.getElementById("grid").style.position = "fixed";
+        // document.body.style.position="fixed";
+      }
+      function cc() {
+        document.getElementById("sidebarId").style.display = "none";
+        document.getElementById("grid").style.position = "relative";
+      }
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/TweenMax.min.js"></script>
+  </body>
+</html>
