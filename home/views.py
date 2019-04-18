@@ -8,4 +8,6 @@ def home1(request):
 def developers(request):
     return HttpResponse("<h1>Shubhank Khare</h1><h1>Piyush Jain</h1>The site is in development phase")
 def about(request):
-    return HttpResponse("<h1>In development Phase</h1>")
+    return render(request,'about.html')
+def error_404_view(request, exception):
+    return render(request,'Error.html')
