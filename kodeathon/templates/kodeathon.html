@@ -87,16 +87,29 @@
     <form action="" method="POST">
     {% csrf_token %}
       <h1 class="title">Registration for {{name}}</h1>
+      {% if TeamEvent %}
       <label for="teamname">Name of your team</label>
       <input name="teamname" type="text" required />
       <label for="email">Your email address</label>
       <input name="email" type="email" required />
+      <label for="mobile">Your contact number</label>
+      <input name="mobile" type="number" required/>
       <label for="member1">Team member1</label>
       <input name="member1" type="text" required />
       <label for="member2">Team member2</label>
       <input name="member2" type="text" />
       <label for="member3">Team member3</label>
       <input name="member3" type="text" />
+    {% else %}
+      <label for="name">Your name</label>
+      <input name="name" type="text" />
+      <label for="Er">Your Er. number</label>
+      <input name="Er" type="text" />
+      <label for="email">Your email address</label>
+      <input name="email" type="email" required />
+      <label for="mobile">Your contact number</label>
+      <input name="mobile" type="number" required/>
+    {% endif %}
       <button class="btn ">Submit</button>
     </form>
   </body>
