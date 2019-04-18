@@ -1,0 +1,449 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="shortcut icon" href="{% static 'teamphotos/bitwise_logo.ico' %}">
+    <title>Team-Bitwise</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Righteous"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+      integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+      crossorigin="anonymous"
+    />
+  </head>
+  <style>
+    /* body {
+      justify-content: center;
+    } */
+    .card {
+      /* margin: 10px; */
+      background: white;
+      padding: 10px;
+      border: 1px solid rgba(74, 74, 74, 0.075);
+      border-radius:0px 20px 0px 0px;
+      width: 290px;
+      height: 290px;
+      text-align: center;
+      color: #7b7b7b;
+      font-family: "Righteous", cursive;
+      -webkit-filter: grayscale(50%);
+      filter: grayscale(50%);
+      -webkit-transition-delay: 0.1s;
+      transition-delay: 0.1s;
+      transition: 0.2s border, 0.2s padding;
+      margin: 3px;
+    }
+    .card .name {
+      font-size: 33px;
+      margin-top: 30px;
+    }
+    .line {
+      height: 1px;
+      width: 40%;
+      margin: 1em auto;
+      position: relative;
+      background: rgba(0, 0, 0, 0.1);
+    }
+    .dp {
+      display: block;
+      border-radius: 50%;
+      margin: 1em auto;
+      height: 110px;
+      width: 110px;
+    }
+    .card:hover {
+      padding: 8px;
+      -webkit-filter: none;
+      filter: none;
+      /* cursor: pointer; */
+      border: 3px solid rgba(0, 0, 0, 0.1);
+      color: black;
+    }
+    .position {
+      margin: 0;
+      position: relative;
+      font-size: 0.95em;
+      font-style: italic;
+      font-family: "Playfair Display", serif;
+      text-align: center;
+      display: block;
+    }
+    .linkedin,
+    .github {
+      display: block;
+      float: left;
+      color: #aaa;
+      font-size: 25px;
+    }
+    .github {
+      text-align: right;
+      float: right;
+      margin-right: 20px;
+    }
+    .linkedin {
+      margin-left: 20px;
+    }
+    .linkedin:hover {
+      color: black;
+    }
+    .github:hover {
+      color: black;
+    }
+    #grid > .card {
+      display: inline-block;
+    }
+    #grid {
+      position: relative;
+      text-align: center;
+      /* border: 2px solid black; */
+      width: 100%;
+    }
+    /*Team css*/
+    .openSidebar-btn {
+      background: none;
+      border: 0px;
+      outline: none;
+      margin: 1%;
+      margin-bottom: 0%;
+      position: absolute;
+      color: black;
+      left: 0%;
+      top: 0%;
+      /* border: 2px solid black; */
+      font-size: 42px;
+      transition: font-size 0.3s;
+    }
+    .logob{
+        height:80px;
+        width:80px;
+        position:absolute;
+        right:1%;
+        top:4%;
+        /*margin:2%;*/
+        transition:0.5s;
+
+    }
+    .logob:hover{
+        height:90px;
+        width:90px;
+    }
+    .meetTeam{
+        display:none;
+    }
+    .openSidebar-btn:hover {
+      cursor: pointer;
+      font-size: 45px;
+    }
+    #sidebarId {
+      /* font-family: "Varela Round", sans-serif; */
+      font-family: "Righteous", cursive;
+      display: none;
+      background-color: rgba(0, 0, 0, 0.8);
+      color: white;
+      text-align: center;
+      width: 0%;
+      height: 100% !important;
+      overflow: auto;
+      position: absolute;
+      top: 0;
+      left: 0;
+      /* transition: 0.5s; */
+    }
+    .sidebar-content {
+      position: relative;
+      top: 20%;
+      width: 100%;
+      text-align: center;
+      margin-top: 0%;
+    }
+    .sidebar a {
+      transition: letter-spacing 0.3s;
+    }
+    .sidebar a {
+      color: lightgrey;
+      text-decoration: none;
+      display: block;
+      padding: 1.5%;
+      font-size: 40px;
+    }
+    .sidebar a:hover {
+      color: white;
+      letter-spacing: 2px;
+    }
+    .closebtn {
+      position: absolute;
+      top: 20px;
+      right: 45px;
+      font-size: 40px;
+      background: none;
+      color: white;
+      border: 0px;
+      transition: font-size 0.3s;
+    }
+    .closebtn:hover {
+      cursor: pointer;
+      font-size: 45px;
+    }
+    .header {
+      /* border: 2px solid black; */
+      /* text-align: center; */
+      font-family: "Righteous", cursive;
+      position: relative;
+      text-align: center;
+    }
+    .header h1 {
+      font-size: 45px;
+    }
+    @media only screen and (max-width: 800px) {
+      .header h1 {
+        font-size: 40px !important;
+      }
+    }
+    @media only screen and (max-width: 420px) {
+      .sidebar-content a {
+        padding: 20px !important;
+      }
+      .header h1,
+      .openSidebar-btn {
+        font-size: 40px !important;
+      }
+    .header h1{
+         display:none !important;
+          margin-top:22px !important;
+          margin-left:15% ;
+      }
+      .openSidebar-btn {
+        top: 0px !important;
+      }
+      .meetTeam{
+          display:block;
+          position:relative;
+          margin-top:90px;
+          font-family: "Righteous", cursive;
+          font-size:40px;
+          /*border:2px solid black;*/
+      }
+      body{
+          text-align:center;
+      }
+      .logob{
+          position:absolute;
+          height:60px;
+          width:60px;
+          top: 1px !important;
+          right:10px;
+          /*border:2px solid black;*/
+          transition:0.2s;
+      }
+      .logob:hover{
+          height:70px !important;
+          width:70px !important;
+          top:-1px !important;
+      }
+    }
+    .header {
+      border: 1px solid white;
+      /*width: 80%;*/
+    }
+  </style>
+  <body>
+    <div class="header">
+      <button onclick="open_sidebar()" class="openSidebar-btn">
+        <i class="fas fa-bars hamburger"></i>
+      </button>
+      <a href="https://www.facebook.com/JUETprogrammingHub/"><img src="{% static 'teamphotos/logo.png' %}" alt="" class="logob" /></a>
+      <h1 style="color:black">Meet Our team</h1>
+    </div>
+    <h1 class="meetTeam" style="color:black">Meet Our team</h1>
+    <div id="grid">
+      <div class="card 1">
+        <div class="name">Ritwik Shanker</div>
+        <div class="line"></div>
+        <div class="position">Secretary</div>
+        <img src="{% static 'teamphotos/ritwik.jpg' %}" alt="" class="dp" />
+        <a href="https://www.linkedin.com/in/ritwikshanker/"
+          ><div class="linkedin"><i class="fab fa-linkedin-in"></i></div
+        ></a>
+        <a href="https://github.com/ritwikshanker "
+          ><div class="github"><i class="fab fa-github"></i></div
+        ></a>
+      </div>
+      <div class="card 2">
+        <div class="name">Sparsh Jaiswal</div>
+        <div class="line"></div>
+        <div class="position">Secretary</div>
+        <img src="{% static 'teamphotos/sparshsir.jpg' %}" alt="" class="dp" />
+        <a href="https://www.linkedin.com/in/sparshjaiswal/"
+          ><div class="linkedin"><i class="fab fa-linkedin-in"></i></div
+        ></a>
+        <a href="https://github.com/Sparsh-Jaiswal"
+          ><div class="github"><i class="fab fa-github"></i></div
+        ></a>
+      </div>
+      <div class="card 3">
+        <div class="name">Aditya Priyam</div>
+        <div class="line"></div>
+        <div class="position">Secretary</div>
+        <img src="{% static 'teamphotos/adityapriyam.jpg' %}" alt="" class="dp" />
+        <a href="https://www.linkedin.com/in/iampriyam/"
+          ><div class="linkedin"><i class="fab fa-linkedin-in"></i></div
+        ></a>
+        <a href="#"
+          ><div class="github"><i class="fab fa-github"></i></div
+        ></a>
+      </div>
+      <div class="card 4">
+        <div class="name">Harsh Shrivastava</div>
+        <div class="line"></div>
+        <div class="position">Secretary</div>
+        <img src="{% static 'teamphotos/harsh.jpg' %}" alt="" class="dp" />
+        <a href="https://www.linkedin.com/in/harsh-srivastava-425ba7136/"
+          ><div class="linkedin"><i class="fab fa-linkedin-in"></i></div
+        ></a>
+        <a href="https://github.com/srivastavaharsh9888"
+          ><div class="github"><i class="fab fa-github"></i></div
+        ></a>
+      </div>
+      <!-- <div class="grid"> -->
+      <div class="card">
+        <div class="name">Shubhank</div>
+        <div class="line"></div>
+        <div class="position">Coordinator</div>
+        <img src="{% static 'teamphotos/Shubhank.jpg' %}" alt="" class="dp" />
+        <a href="https://angel.co/shubhank-khare-1"
+          ><div class="linkedin"><i class="fab fa-angellist"></i></div
+        ></a>
+        <a href="https://github.com/shubhank7673"
+          ><div class="github"><i class="fab fa-github"></i></div
+        ></a>
+      </div>
+      <div class="card">
+        <div class="name">Piyush</div>
+        <div class="line"></div>
+        <div class="position">Coordinator</div>
+        <img src="{% static 'teamphotos/piyush.jpeg' %}" alt="" class="dp" />
+        <a href="#"
+          ><div class="linkedin"><i class="fab fa-linkedin-in"></i></div
+        ></a>
+        <a href="#"
+          ><div class="github"><i class="fab fa-github"></i></div
+        ></a>
+      </div>
+      <div class="card">
+        <div class="name">Prakhar</div>
+        <div class="line"></div>
+        <div class="position">Coordinator</div>
+        <img src="{% static 'teamphotos/prakhar.jpg' %}" alt="" class="dp" />
+        <a href="https://www.linkedin.com/in/prakhar-pandey-ax15/"
+          ><div class="linkedin"><i class="fab fa-linkedin-in"></i></div
+        ></a>
+        <a href="https://github.com/Valiant1011"
+          ><div class="github"><i class="fab fa-github"></i></div
+        ></a>
+      </div>
+      <div class="card">
+        <div class="name">Sachinam</div>
+        <div class="line"></div>
+        <div class="position">Coordinator</div>
+        <img src="{% static 'teamphotos/sachinam.jpg' %}" alt="" class="dp" />
+        <a href="https://www.linkedin.com/in/sachinam-srivastava-343b7115a/"
+          ><div class="linkedin"><i class="fab fa-linkedin-in"></i></div
+        ></a>
+        <a href="https://github.com/sachinam1397"
+          ><div class="github"><i class="fab fa-github"></i></div
+        ></a>
+      </div>
+      <div class="card">
+        <div class="name">Abhinav</div>
+        <div class="line"></div>
+        <div class="position">Coordinator</div>
+        <img src="{% static 'teamphotos/abhinav.jpg' %}" alt="" class="dp" />
+        <a href="https://www.linkedin.com/in/abhinav-sharma-839119152/"
+          ><div class="linkedin"><i class="fab fa-linkedin-in"></i></div
+        ></a>
+        <a href="https://github.com/abhinavsharma629"
+          ><div class="github"><i class="fab fa-github"></i></div
+        ></a>
+      </div>
+      <div class="card">
+        <div class="name">Manika</div>
+        <div class="line"></div>
+        <div class="position">Coordinator</div>
+        <img src="{% static 'teamphotos/manika.jpg' %}" alt="" class="dp" />
+        <a href=" https://www.linkedin.com/in/manika-sharma-54004a152/"
+          ><div class="linkedin"><i class="fab fa-linkedin-in"></i></div
+        ></a>
+        <a href="https://github.com/manikasharma09 "
+          ><div class="github"><i class="fab fa-github"></i></div
+        ></a>
+      </div>
+      <div class="card">
+        <div class="name">Aryan</div>
+        <div class="line"></div>
+        <div class="position">Coordinator</div>
+        <img src="{% static 'teamphotos/aryan.jpg' %}" alt="" class="dp" />
+        <a href="#"
+          ><div class="linkedin"><i class="fab fa-linkedin-in"></i></div
+        ></a>
+        <a href="#"
+          ><div class="github"><i class="fab fa-github"></i></div
+        ></a>
+      </div>
+      <div class="card">
+        <div class="name">Soumya</div>
+        <div class="line"></div>
+        <div class="position">Coordinator</div>
+        <img src="{% static 'teamphotos/soumya.jpg' %}" alt="" class="dp" />
+        <a href="https://linkedin.com/in/soumyamukhija"
+          ><div class="linkedin"><i class="fab fa-linkedin-in"></i></div
+        ></a>
+        <a href="https://github.com/soumyamukhija"
+          ><div class="github"><i class="fab fa-github"></i></div
+        ></a>
+      </div>
+    </div>
+    <div class="sidebar" id="sidebarId">
+      <button onclick="cc()" class="closebtn">
+        <i class="fas fa-times"></i>
+      </button>
+      <div class="sidebar-content">
+        <a href="{% url 'home' %}">Home</a>
+        <a href="{% url 'kodeathon' %}">Kodeathon</a>
+        <a href="{% url 'team' %}">Team bitwise</a>
+        <a href="{% url 'developers' %}">Developers</a>
+        <a href="{% url 'about' %}">About</a>
+      </div>
+    </div>
+    <script>
+      function open_sidebar() {
+        document.getElementById("sidebarId").style.width = "100%";
+        document.getElementById("sidebarId").style.display = "block";
+        TweenMax.from(".sidebar", 1, {
+          x: -1000,
+          ease: Back.easeOut.config(1.7)
+        });
+        TweenMax.staggerFrom(
+          ".sidebar a",
+          0.7,
+          { scale: 0, opacity: 0, x: 500 },
+          0.3
+        );
+        document.getElementById("grid").style.position = "fixed";
+        // document.body.style.position="fixed";
+      }
+      function cc() {
+        document.getElementById("sidebarId").style.display = "none";
+        document.getElementById("grid").style.position = "relative";
+      }
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/TweenMax.min.js"></script>
+    <!-- </div> -->
+  </body>
+</html>
