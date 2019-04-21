@@ -1,0 +1,317 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="shortcut icon" href="{% static 'teamphotos/bitwise_logo.ico' %}">
+    <title>Kodeathon-live</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Righteous"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+      integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+      crossorigin="anonymous"
+    />
+  </head>
+  <style>
+     body {
+      /*justify-content: center;*/
+      background-image:url("{% static 'teamphotos/bg1.jpg' %}");
+      /*height:100%;*/
+      height:100%;
+      /*width:100%;*/
+      background-repeat:no-repeat;
+      background-size:cover;
+      overflow:none;
+
+    }
+    .card {
+      /* margin: 10px; */
+      background: white;
+      padding: 10px;
+      border: 1px solid rgba(74, 74, 74, 0.075);
+      border-radius:0px 20px 0px 0px;
+      width: 290px;
+      height: 290px;
+      text-align: center;
+      color: #7b7b7b;
+      font-family: "Righteous", cursive;
+      -webkit-filter: grayscale(50%);
+      filter: grayscale(50%);
+      -webkit-transition-delay: 0.1s;
+      transition-delay: 0.1s;
+      transition: 0.2s border, 0.2s padding;
+      margin: 3px;
+    }
+    .card .name {
+      font-size: 33px;
+      margin-top: 30px;
+    }
+    .line {
+      height: 1px;
+      width: 40%;
+      margin: 1em auto;
+      position: relative;
+      background: rgba(0, 0, 0, 0.1);
+    }
+    .dp {
+      display: block;
+      border-radius: 50%;
+      margin: 1em auto;
+      height: 110px;
+      width: 110px;
+    }
+    .card:hover {
+      padding: 8px;
+      -webkit-filter: none;
+      filter: none;
+      /* cursor: pointer; */
+      border: 3px solid rgba(0, 0, 0, 0.1);
+      color: black;
+    }
+    .position {
+      margin: 0;
+      position: relative;
+      font-size: 0.95em;
+      font-style: italic;
+      font-family: "Playfair Display", serif;
+      text-align: center;
+      display: block;
+    }
+    .linkedin,
+    .github {
+      display: block;
+      float: left;
+      color: #aaa;
+      font-size: 25px;
+    }
+    .github {
+      text-align: right;
+      float: right;
+      margin-right: 20px;
+    }
+    .linkedin {
+      margin-left: 20px;
+    }
+    .linkedin:hover {
+      color: black;
+    }
+    .github:hover {
+      color: black;
+    }
+    #grid > .card {
+      display: inline-block;
+    }
+    #grid {
+      position: relative;
+      text-align: center;
+      /* border: 2px solid black; */
+      width: 100%;
+    }
+    /*Team css*/
+    .openSidebar-btn {
+      background: none;
+      border: 0px;
+      outline: none;
+      margin: 1%;
+      margin-bottom: 0%;
+      position: absolute;
+      color: black;
+      left: 0%;
+      top: 0%;
+      /* border: 2px solid black; */
+      font-size: 42px;
+      transition: font-size 0.3s;
+    }
+    .logob{
+        height:80px;
+        width:80px;
+        position:absolute;
+        right:1%;
+        top:4%;
+        /*margin:2%;*/
+        transition:0.5s;
+
+    }
+    .logob:hover{
+        height:90px;
+        width:90px;
+    }
+    .meetTeam{
+        display:none;
+    }
+    .openSidebar-btn:hover {
+      cursor: pointer;
+      font-size: 45px;
+    }
+    #sidebarId {
+      /* font-family: "Varela Round", sans-serif; */
+      font-family: "Righteous", cursive;
+      display: none;
+      background-color: rgba(0, 0, 0, 0.8);
+      color: white;
+      text-align: center;
+      width: 0%;
+      height: 100% !important;
+      overflow: auto;
+      position: absolute;
+      top: 0;
+      left: 0;
+      /* transition: 0.5s; */
+    }
+    .sidebar-content {
+      position: relative;
+      top: 20%;
+      width: 100%;
+      text-align: center;
+      margin-top: 0%;
+    }
+    .sidebar a {
+      transition: letter-spacing 0.3s;
+    }
+    .sidebar a {
+      color: lightgrey;
+      text-decoration: none;
+      display: block;
+      padding: 1.5%;
+      font-size: 40px;
+    }
+    .sidebar a:hover {
+      color: white;
+      letter-spacing: 2px;
+    }
+    .closebtn {
+      position: absolute;
+      top: 20px;
+      right: 45px;
+      font-size: 40px;
+      background: none;
+      color: white;
+      border: 0px;
+      transition: font-size 0.3s;
+    }
+    .closebtn:hover {
+      cursor: pointer;
+      font-size: 45px;
+    }
+    .header {
+      /* border: 2px solid black; */
+      /* text-align: center; */
+      font-family: "Righteous", cursive;
+      position: relative;
+      text-align: center;
+    }
+    .header h1 {
+      font-size: 45px;
+    }
+    @media only screen and (max-width: 800px) {
+      .header h1 {
+        font-size: 40px !important;
+      }
+    }
+    @media only screen and (max-width: 420px) {
+      .sidebar-content a {
+        padding: 20px !important;
+      }
+      .header h1,
+      .openSidebar-btn {
+        font-size: 40px !important;
+      }
+    .header h1{
+         display:none !important;
+          margin-top:22px !important;
+          margin-left:15% ;
+      }
+      .openSidebar-btn {
+        top: 0px !important;
+      }
+      .meetTeam{
+          display:block;
+          position:relative;
+          margin-top:90px;
+          font-family: "Righteous", cursive;
+          font-size:40px;
+          /*border:2px solid black;*/
+      }
+      body{
+          text-align:center;
+      }
+      .logob{
+          position:absolute;
+          height:60px;
+          width:60px;
+          top: 1px !important;
+          right:10px;
+          /*border:2px solid black;*/
+          transition:0.2s;
+      }
+      .logob:hover{
+          height:70px !important;
+          width:70px !important;
+          top:-1px !important;
+      }
+    }
+    .header {
+      /*border: 1px solid white;*/
+      /*width: 80%;*/
+    }
+    .linkq{
+        font-family:"Righteous", cursive;
+        font-size:80px;
+        margin:70px;
+        text-decoration:none;
+        color:white;
+    }
+    .linkq:hover{
+        color:rgba(255,255,255,0.8);
+    }
+    p{
+        margin:50px;
+    }
+    body{
+        text-align:center;
+        /*background:fixed;*/
+    }
+    .first{
+        margin-top:88px;
+    }
+    .gohome {
+      background: rgba(255,255,255,0.9);
+      color: rgba(0, 0, 0, 0.7);
+      border: 2px solid rgba(255,255,255,0.9);
+      padding: 10px;
+      border-radius: 17px;
+      font-family: "Righteous", cursive;
+      font-size: 20px;
+      margin-top: 15px;
+      outline: none;
+    }
+    .gohome:hover {
+      cursor: pointer;
+      color: white;
+      background: rgba(0, 0, 0, 0.9);
+    }
+  </style>
+  <body>
+     <div class="header">
+    <h1  style="color:White;font-size:65px;">{{ name }}</h1>
+    </div>
+    <p class="first">
+    <a href="{{data.Q1}}" class="linkq">Q.1</a>
+    <a href="{{data.Q2}}" class="linkq">Q.2</a>
+    <a href="{{data.Q3}}" class="linkq">Q.3</a>
+    </p>
+    <p>
+    <a href="{{data.Q4}}" class="linkq">Q.4</a>
+    <a href="{{data.Q5}}" class="linkq">Q.5</a>
+    <a href="{{data.Q6}}" class="linkq">Q.6</a>
+    </p>
+    <a href="{% url 'home' %}"><button class="gohome">Go to home</button></a>
+    <!-- </div> -->
+  </body>
+</html>
