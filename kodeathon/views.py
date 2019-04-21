@@ -4,7 +4,7 @@ import gspread
 from oauth2client.service_account import ServiceAccountCredentials
 import random
 import string
-from .models import kodeathon
+from .models import kodeathon,livekod
 
 def kodeathonf(request):
     kd = kodeathon.objects.all()
@@ -39,4 +39,11 @@ def kodeathonf(request):
     if kd.isActive:
         return render(request,'kodeathon.html',{'name':kd.contestName,'TeamEvent':kd.TeamEvent})
     else:
-        return HttpResponse('No upcoming kodeathons')
+        return render(request,'noUpcoming.html')
+def live(request):
+    kod = livekod.objects.all()
+    if kod[0].isActive == False:
+        return HttpResponse('<h1>No live kodeathons !</h1>')
+    kod = kod[0]
+    data = {'name':kod.name,'data':kod}
+    return render(request,'live.html',data)
