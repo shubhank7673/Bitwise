@@ -45,5 +45,5 @@ def live(request):
     if kod[0].isActive == False:
         return HttpResponse('<h1>No live kodeathons !</h1>')
     kod = kod[0]
-    data = {'name':kod.name,'data':kod}
+    data = {'name':kod.name,'data':kod,'bgurl':kod.bgUrl}
     return render(request,'live.html',data)
