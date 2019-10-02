@@ -11,3 +11,5 @@ def about(request):
     return render(request,'about.html')
 def error_404_view(request, exception):
     return render(request,'Error.html')
+def feedback(request):		
+    return render(request,'feedback.html')
