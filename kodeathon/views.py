@@ -4,7 +4,7 @@ import gspread
 from oauth2client.service_account import ServiceAccountCredentials
 import random
 import string
-from .models import kodeathon,livekod
+from .models import kodeathon
 
 def kodeathonf(request):
     kd = kodeathon.objects.all()
