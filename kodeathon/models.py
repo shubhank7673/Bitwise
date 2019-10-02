@@ -9,6 +9,7 @@ class kodeathon(models.Model):
         return self.contestName
 class livekod(models.Model):
     isActive = models.BooleanField(default=False)
+    bgUrl = models.TextField(default='none')
     name = models.CharField(max_length=20)
     Q1 = models.TextField()
     Q2 = models.TextField()
